@@ -1,31 +1,25 @@
 
-let oneEuroIs = {
-    "JPY": 156.5, // japan yen
-    "USD": 1.07, // us dollar
-    "GBP": 0.87, // british pound
-}
-const fromDollarToYen = function(valueInDollar) {
-    
-    let valueInYen = valueInDollar * 156.7;
 
-    return valueInYen;
-}
-const fromYenToDollar = function(valueInPund) {
-    
-    let valueInPound = valueInDollar * 0.87;
+const oneEuroIs = {
+    "JPY": 156.5, // Yen japonés
+    "USD": 1.07,  // Dólar estadounidense
+    "GBP": 0.87   // Libra esterlina
+};
 
-    return valueInPound;
-}
-const fromEuroToDollar = function(valueInEuro) {
-    
-    let valueInDollar = valueInEuro * 1.07;
+// 1. Convertir de Dólar a Yen
+const fromEuroToDollar = (euro) => {
+    const conversionRate = 1.07;
+    return euro * conversionRate;
+};
 
-    return valueInDollar;
-}
+const fromDollarToYen = (dollar) => {
+    const conversionRate = 146.73;
+    return dollar * conversionRate;
+};
 
-module.exports = { sum, fromEuroToDollar }
-let oneEuroIs = {
-    "JPY": 156.5, // japan yen
-    "USD": 1.07, // us dollar
-    "GBP": 0.87, // british pound
-}
+const fromYenToPound = (yen) => {
+    const conversionRate = 0.00557;
+    return yen * conversionRate;
+};
+
+module.exports = { fromEuroToDollar, fromDollarToYen, fromYenToPound };
